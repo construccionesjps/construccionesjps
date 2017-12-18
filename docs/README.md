@@ -1,61 +1,74 @@
-# JBlog Jekyll Theme
+# Particle Jekyll Theme
 
-**[JBlog](http://alperenbozkurt.net/JBlog)** is a simple jekyll theme.
+![](./particle.jpg)
 
-I have used this theme in my own php and ruby blogs. And there are some shortcomings. If something looks extremely ugly and you can't resist to fix it, just send me a PR. I will be grateful.
+This is a simple and minimalist template for Jekyll designed for developers that want to show of their portfolio.
 
-If you like this theme or using it, please give a **star** for motivation.
+The Theme features:
 
-## Preview
+- Gulp
+- SASS
+- Sweet Scroll
+- Particle.js
+- BrowserSync
+- Font Awesome and Devicon icons
+- Google Analytics
+- Info Customization
 
-![Home Page](/assets/img/screenshot-home.png)    
-![Post Page](/assets/img/screenshot-post.png)
+## Basic Setup
 
-See a [live version of JBlog](http://alperenbozkurt.net/JBlog) hosted on GitHub.
+1. [Install Jekyll](http://jekyllrb.com)
+2. Fork the [Particle Theme](https://github.com/nrandecker/particle/fork)
+3. Clone the repo you just forked.
+4. Edit `_config.yml` to personalize your site.
 
-## Getting Started
+## Site and User Settings
 
-To learn how to install and use this theme check out the [Setup Guide](http://alperenbozkurt.net/JBlog/JBlog-theme/) for more information or apply the following instructions.
+You have to fill some informations on `_config.yml` to customize your site.
 
-## Installation
-
-- Fork the Repo
-- Edit _config.yml file.
-	- Edit url as **https**://yourusername.github.io
-	- and others
-- Remove sample posts from _posts folder and add yours.
-- Edit index.md file in about folder.
-- Change repo name to YourUserName.github.io
-- Open "Github Pages" from settings page
-- Click the star icon at the top of this page ;)
-
-
-## How to customization
-
-- You can change title, description, profile image and social network icons in _config.yml file.
-- If you are not like this colors or fonts, you can change its in _sass/variables.scss file.
-```scss
-$title-font   : Lobster, cursive;
-$menu-font    : Alegreya Sans SC, sans-serif;
-$main-font    : Roboto Slab, serif;
 ```
-You can add your fonts this area.
-```scss
-// Colors
-$blue: #3498db;
-$orange: #e67e22;
-$red: #e74c3c;
-$white: #ecf0f1;
-$green: #2ecc71;
-$turko: #1abc9c;
-$purple: #9b59b6;
-$dark-blue: #34495e;
+# Site settings
+description: A blog about lorem ipsum dolor sit amet
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://localhost:3000" # the base hostname & protocol for your site
 
-$main-color: $white;
-$background-color: $blue;
-$thrid-color: rgba(52, 152, 219, 0.8);
+# User settings
+username: Lorem Ipsum
+user_description: Anon Developer at Lorem Ipsum Dolor
+user_title: Anon Developer
+email: anon@anon.com
+twitter_username: lorem_ipsum
+github_username:  lorem_ipsum
+gplus_username:  lorem_ipsum
 ```
 
-$main-color is panels background color.
-$background-color is background, buttons, links color.
-$thrid-color is opacity version of background color.
+**Don't forget to change your url before you deploy your site!**
+
+## Color and Particle Customization
+- Color Customization
+  - Edit the sass variables
+- Particle Customization
+  - Edit the json data in particle function in app.js
+  - Refer to [Particle.js](https://github.com/VincentGarreau/particles.js/) for help
+
+## Running the blog in local
+
+In order to compile the assets and run Jekyll on local you need to follow those steps:
+
+- Install [NodeJS](https://nodejs.org/)
+- Run `npm install`
+- Run `gulp`
+
+## Questions
+
+Having any issues file a [GitHub Issue](https://github.com/nrandecker/particle/issues/new).
+
+## License
+
+This theme is free and open source software, distributed under the The MIT License. So feel free to use this Jekyll theme anyway you want.
+
+## Credits
+
+This theme was partially designed with the inspiration from these fine folks
+- [Willian Justen](https://github.com/willianjusten/will-jekyll-template)
+- [Vincent Garreau](https://github.com/VincentGarreau/particles.js/)
