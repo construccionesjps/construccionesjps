@@ -4,7 +4,15 @@
 
 {% for item in page.galleries %}
   <div class="user-projects">
-    <div class="images-right">
+    {% assign mod = forloop.index0 | modulo: 2 %}
+    {% if mod == 0 %}
+      {% assign classImage = "images-right" %}
+      {% assign classContents = "contents" %}
+    {% else %}
+      {% assign classImage = "images-left" %}
+      {% assign classContents = "contents-right" %}
+    {%endif%}
+    <div class="{{classImage}}">
         {% assign counter = 0 %}
         {% for file in site.static_files %}
             {% if file.path contains item.folder %}
@@ -17,13 +25,14 @@
             {% endif %}
         {% endfor %}
     </div>
-    <div class="contents">
-      <h3> Project Title </h3>
+    <div class="{{classContents}}">
+      <h3> {{item.title}} </h3>
       <ul>
-        <li> Featured Skills</li>
+        {% for skill in item.skills %}
+          <li> {{skill}}</li>
+        {% endfor %}
       </ul>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <a class="project-link" href="#">Check it out</a>
+      <p>{{item.description}}</p>
     </div>
   </div>
 {% endfor %}
