@@ -1,7 +1,36 @@
 <div class="user-details">
   <h1> Proyectos </h1>
 </div>
-<div class="user-projects">
+
+{% for item in page.galleries %}
+  <div class="user-projects">
+    <div class="images-right">
+        {% assign counter = 0 %}
+        {% for file in site.static_files %}
+            {% if file.path contains item.folder %}
+                {% if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' %}
+                    {% assign counter = counter | plus: 1 %}
+                    <a href="{{ file.path }}" title="{{ item.title }}" class="gray lightbox-image" {% if counter != 1 %} style="display:none" {% endif%}>
+                        <img src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path }}&w=300&h=300&output=jpg&q=50&t=square" />
+                    </a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="contents">
+      <h3> Project Title </h3>
+      <ul>
+        <li> Featured Skills</li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <a class="project-link" href="#">Check it out</a>
+    </div>
+  </div>
+{% endfor %}
+
+
+
+<!--div class="user-projects">
   <div class="images-right">
     <img alt="mountains" src="{{ "/assets/img/mountains.jpg" | prepend: site.baseurl }}" />
   </div>
@@ -14,6 +43,7 @@
     <a class="project-link" href="#">Check it out</a>
   </div>
 </div>
+
 <div class="user-projects">
   <div class="images-left">
     <img alt="mountains" src="{{ "/assets/img/skate.jpg" | prepend: site.baseurl }}" />
@@ -27,5 +57,5 @@
     <a class="project-link" href="#">Check it out</a>
   </div>
 
-  <a class="project-link" href="#">Ver más</a>
+  <a class="project-link" href="#">Ver más</a-->
 </div>
